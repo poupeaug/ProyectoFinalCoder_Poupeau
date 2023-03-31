@@ -1,0 +1,34 @@
+{% extends "MiTierra/index.html"%}
+
+{% load static %}
+
+{% block cards %}
+  {% if not propiedades %}
+    <h1>No se registran propiedades...</h1>
+  {% endif %}
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+  {% for propiedad in propiedades %}
+      <div class="col">
+        <div class="card shadow-sm">
+          <img class="card-image-top"  style="height: 225px;width: 100%;display: block;"src="{{propiedad.image_url}}" data-holder-rendered="true">
+          <div class="card-body">
+            <p class="card-text">{{propiedad.detalle}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                {% if user.is_authenticated and user.id == propiedad.propietario.id %}
+                <a href="{% url 'propiedad-delete' propiedad.id %}" type="button" class="btn btn-sm btn-outline-secondary">Borrar</a>
+                <a href="{% url 'propiedad-update' propiedad.id %}" type="button" class="btn btn-sm btn-outline-secondary">Actualizar</a>
+                
+                {% endif %}
+              </div>
+              <small class="text-muted">U$D{{ propiedad.precio }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+  {% endfor %}    
+ </div>
+
+{% endblock %}
