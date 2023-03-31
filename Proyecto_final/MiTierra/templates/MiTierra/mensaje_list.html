@@ -1,0 +1,17 @@
+{% extends "MiTierra/base.html" %}
+
+{% load static %}
+
+{% block main %}
+    <h1>Mis mensajes</h1>
+<ul>
+    {% for mensaje in mensajes %}
+        <li> Mensaje de: {{mensaje.email}}
+            <br>
+            {{mensaje.mensaje}} 
+            </br>
+            <a href="{% url 'mensaje-delete' mensaje.id %}">Borrar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

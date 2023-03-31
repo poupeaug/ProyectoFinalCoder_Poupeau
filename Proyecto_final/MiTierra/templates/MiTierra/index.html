@@ -1,0 +1,28 @@
+{% extends "MiTierra/base.html" %}
+
+{% load static %}
+
+{%block main %}
+<main>
+  <img src="static/MiTierra/assets/flia.jpeg">
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MI TIERRA</font></font></h1>
+        <p class="lead text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mucho mas que mudarte</font></font></p>
+        <p>
+          <a href="{{propiedad_list.html}}" class="btn btn-primary my-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lista de Propiedades</font></font></a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      {% block cards %}{% endblock %}
+    </div>
+  </div>
+
+</main>
+{% endblock %}
