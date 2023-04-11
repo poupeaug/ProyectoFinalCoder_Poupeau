@@ -7,3 +7,5 @@
 ##Tambien esta el apartado acerca de: donde comento un poco sobre el proyecto y su finalidad.
 ##Eso es todo, lamentablemente me faltaron algunas cosas en cuenta a lo estetico de la página,  y lo de los mensajes me salio a medias, es por esto que no grabe el video.
 ###Saludos
+Video explicativo:
+https://youtu.be/950Rj0kquE8
