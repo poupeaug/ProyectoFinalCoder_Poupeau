@@ -61,7 +61,7 @@ class PropiedadSearch(ListView):
 
     def get_queryset(self):
         criterio = self.request.GET.get("criterio")
-        result = Propiedad.objects.filter(nombre=criterio).all()
+        result = Propiedad.objects.filter(tipo=criterio).all()
         return result
 
 class Login(LoginView):

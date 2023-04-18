@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from MiTierra.views import (index, PropiedadList, PropiedadMineList, PropiedadUpdate, PropiedadDelete,
-                            PropiedadCreate, Login, Logout, SignUp, ProfileCreate, ProfileUpdate, about,
+                            PropiedadCreate, PropiedadSearch, Login, Logout, SignUp, ProfileCreate, ProfileUpdate, about,
                             MensajeCreate, MensajeDelete, MensajeList)
 from django.conf import settings
 from django.conf.urls.static import static
@@ -30,6 +30,7 @@ urlpatterns = [
     path('propiedad/<pk>/update', PropiedadUpdate.as_view(), name = "propiedad-update"),
     path('propiedad/<pk>/delete', PropiedadDelete.as_view(), name = "propiedad-delete"),
     path('propiedad/create', PropiedadCreate.as_view(), name = "propiedad-create"),
+    path('propiedad/search', PropiedadSearch.as_view(), name = "propiedad-search"),
     path('login/', Login.as_view(), name = "login"),
     path('logout/', Logout.as_view(), name = "logout"),
     path('signup/', SignUp.as_view(), name = "signup"),
